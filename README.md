@@ -7,6 +7,8 @@ RNNPoet项目
 `gen_poetry.py`：古诗生成程序，拥有可选的风格参数，被main调用<br>
 `main.py`：主函数，既可以调用前两个程序获取预处理数据并使用LSTM网络进行训练，也可以调用gen_poetry.py生成古诗<br>
 
+## 调用命令
+
 ## 结果示范
 ```Shell
 head:床前明月光 + style:黄沙百战金甲：
