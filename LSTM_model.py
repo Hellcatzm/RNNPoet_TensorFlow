@@ -17,7 +17,17 @@ import tensorflow as tf
 
 def rnn_model(num_of_word,input_data,output_data=None,rnn_size=128,num_layers=2,batch_size=128):
     end_points = {}
+    """
 
+    :param num_of_word: 词的个数
+    :param input_data: 输入向量
+    :param output_data: 标签
+    :param rnn_size: 隐藏层的向量尺寸
+    :param num_layers: 隐藏层的层数
+    :param batch_size: 
+    :return: 
+    """
+    
     '''构建RNN核心'''
     # cell_fun = tf.contrib.rnn.BasicRNNCell
     # cell_fun = tf.contrib.rnn.GRUCell
