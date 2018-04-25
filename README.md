@@ -21,7 +21,8 @@ train：表示训练
 gen_poetry：表示根据首字符生成
 generate：表示根据首句和风格句生成古诗
 
-训练时注释掉后两行，保留train行，
+###### 训练
+注释掉后两行，保留train行，
 ```Python
 if __name__ == "__main__":
     words,poetry_vector,to_num,x_batches,y_batches = poetry_porcess.poetry_process()
@@ -30,7 +31,8 @@ if __name__ == "__main__":
     # generate(words_, to_num_, style_words="狂沙将军战燕然，大漠孤烟黄河骑。")
 ```
 
-生成时不需要修改，但是
+###### 生成
+此时不需要修改，使用此时最上面的原版就可以，但是
 ```Python
 generate(words_, to_num_, style_words="狂沙将军战燕然，大漠孤烟黄河骑。")
 ```
