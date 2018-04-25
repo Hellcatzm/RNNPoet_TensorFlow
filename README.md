@@ -1,5 +1,12 @@
 RNNPoet项目
 ===========
+## 相关文章
+###### 项目介绍
+[『TensotFlow』RNN/LSTM古诗生成](http://www.cnblogs.com/hellcat/p/7710034.html)
+###### 文字预处理脚本介绍
+[『TensotFlow』RNN中文文本_上](http://www.cnblogs.com/hellcat/p/7410027.html)
+###### 梯度处理函数介绍
+[『TensorFlow』梯度优化相关](http://www.cnblogs.com/hellcat/p/7435977.html)
 
 ## 1、文件简介
 `LSTM_model.py`：LSTM网络模型，提供了end_points接口，被其他部分调用<br>
