@@ -84,7 +84,8 @@ def generate(words, to_num, style_words="狂沙将军战燕然，大漠孤烟黄
                 last_state = sess.run(end_points['last_state'],
                                       feed_dict={input_data: x, end_points['initial_state']: last_state})
  
-        start_words = list("少小离家老大回")  # list(input("请输入起始语句："))
+        # start_words = list("少小离家老大回")
+        start_words = list(input("请输入起始语句："))
         start_word_len = len(start_words)
  
         result = start_words.copy()
