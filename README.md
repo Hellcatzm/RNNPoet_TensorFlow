@@ -1,15 +1,47 @@
 RNNPoet项目
 ===========
 
-## 文件简介
+## 1、文件简介
 `LSTM_model.py`：LSTM网络模型，提供了end_points接口，被其他部分调用<br>
 `poetry_porcess.py`：数据读取、预处理部分，会返回打包好的batch，被main调用<br>
 `gen_poetry.py`：古诗生成程序，拥有可选的风格参数，被main调用<br>
 `main.py`：主函数，既可以调用前两个程序获取预处理数据并使用LSTM网络进行训练，也可以调用gen_poetry.py生成古诗<br>
 
-## 调用指令
+## 2、调用指令
+在`main.py`最后有如下指令，
+```Python
+if __name__ == "__main__":
+    words,poetry_vector,to_num,x_batches,y_batches = poetry_porcess.poetry_process()
+    # train(words, poetry_vector, x_batches, y_batches)
+    # gen_poetry(words, to_num)
+    generate(words_, to_num_, style_words="狂沙将军战燕然，大漠孤烟黄河骑。")
+```
+此时实际上处于生成模式，对于最后的三行，
+train：表示训练
+gen_poetry：表示根据首字符生成
+generate：表示根据首句和风格句生成古诗
 
-## 结果示范
+训练时注释掉后两行，保留train行，
+```Python
+if __name__ == "__main__":
+    words,poetry_vector,to_num,x_batches,y_batches = poetry_porcess.poetry_process()
+    train(words, poetry_vector, x_batches, y_batches)
+    # gen_poetry(words, to_num)
+    # generate(words_, to_num_, style_words="狂沙将军战燕然，大漠孤烟黄河骑。")
+```
+
+生成时不需要修改，但是
+```Python
+generate(words_, to_num_, style_words="狂沙将军战燕然，大漠孤烟黄河骑。")
+```
+可以替换style_word为任何你想要的风格句，注意最好使用7言或者5言，因为这句会大概率影响到你生成的古诗的句子长度(不绝对)，这只是风格提取，你可以输入任意长度；在运行了脚本后，屏幕会提示输入起始句，输入的句子一般5或者7个字，这个由于会拿来直接做首句(由结果示范可以看到)，输入长度不宜过长。
+
+对于上面的两种情况，修改完成后运行脚本即可，
+```Shell
+python main.py
+```
+即可显示结果
+## 3、结果示范
 ```Shell
 head:床前明月光 + style:黄沙百战金甲：
 
