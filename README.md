@@ -39,7 +39,15 @@ if __name__ == "__main__":
 ```
 
 ###### 生成古诗
-此时不需要修改，使用此时最上面的原版就可以，但是
+此时不需要修改，使用最上面的原版就可以，即
+```Python
+if __name__ == "__main__":
+    words,poetry_vector,to_num,x_batches,y_batches = poetry_porcess.poetry_process()
+    # train(words, poetry_vector, x_batches, y_batches)
+    # gen_poetry(words, to_num)
+    generate(words_, to_num_, style_words="狂沙将军战燕然，大漠孤烟黄河骑。")
+```
+但是注意，
 ```Python
 generate(words_, to_num_, style_words="狂沙将军战燕然，大漠孤烟黄河骑。")
 ```
